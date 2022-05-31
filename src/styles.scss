@@ -1,0 +1,25 @@
+@use "@angular/material" as mat;
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~@angular/material/theming";
+@import "./app/core/scss/variables.scss";
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$sipol-web-primary: mat.define-palette($sipol-primary);
+$sipol-web-accent: mat.define-palette($sipol-accent);
+
+// The warn palette is optional (defaults to red).
+$sipol-web-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$sipol-web-theme: mat.define-light-theme($sipol-web-primary, $sipol-web-accent, $sipol-web-warn);
+
+ /* You can add global styles to this file, and also import other style files */
+ // Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($sipol-web-theme);
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

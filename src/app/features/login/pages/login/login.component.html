@@ -1,0 +1,20 @@
+<app-loading [show]="loading"></app-loading>
+<div class="container">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="d-flex justify-content-center">
+      <div class="d-flex flex-column pt-5 w-50">
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input formControlName="email" matInput />
+          <mat-icon matSuffix>mail</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Senha</mat-label>
+          <input type="password" formControlName="password" matInput />
+          <mat-icon matSuffix>lock</mat-icon>
+        </mat-form-field>
+        <button class="p-2" mat-raised-button color="primary">Entrar</button>
+      </div>
+    </div>
+  </form>
+</div>
